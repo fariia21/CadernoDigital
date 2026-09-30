@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f2e9">
+    <title>O Caderno — To-do-List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="study-tools.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-shell">
+        <aside class="sidebar">
+            <a class="wordmark" href="dashboard.html" aria-label="O Caderno, início"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v18H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H20M9 6h7M9 9h7"/></svg></span>O Caderno</a>
+            <p class="nav-label">O teu espaço</p>
+            <nav class="side-nav" aria-label="Navegação principal">
+                <a class="nav-link" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>Início</a>
+                <a class="nav-link" href="folders.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 9h18"/></svg>Pastas</a>
+                <a class="nav-link active" href="todo.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3 6 1 1 2-2M3 12l1 1 2-2M3 18l1 1 2-2"/></svg>To-do-List</a>
+                <a class="nav-link" href="links.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1 0l3-3A5 5 0 0 0 13 2.9l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.1 0l-3 3A5 5 0 0 0 11 21.1l1.7-1.7"/></svg>Links úteis</a>
+            </nav>
+            <div class="sidebar-note"><span class="note-mark" aria-hidden="true">✳</span><p>O teu ritmo também é progresso.</p></div>
+            <button class="logout-button" id="logout-button" type="button" title="Terminar sessão"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/></svg>Terminar sessão</button>
+        </aside>
+
+        <main class="dashboard-content tool-content">
+            <header class="topbar"><p id="today-date" class="today-date"></p><div class="topbar-actions"><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Ativar modo escuro" title="Ativar modo escuro" aria-pressed="false"></button><div class="user-chip"><span class="user-avatar" aria-hidden="true">A</span><span>Ariana</span></div></div></header>
+            <section class="tool-heading" aria-labelledby="page-title"><p class="eyebrow">Planeia com calma</p><h1 id="page-title">A tua lista de tarefas<span>.</span></h1><p class="hero-copy">Define o que tens para fazer e reserva uma hora para cada passo.</p></section>
+
+            <section class="todo-section" aria-labelledby="new-task-title">
+                <h2 id="new-task-title">Adicionar tarefa</h2>
+                <form class="task-form" id="task-form">
+                    <div class="task-title-field"><label for="task-title">Tarefa</label><input id="task-title" name="title" type="text" placeholder="Ex.: Rever apontamentos de Matemática" maxlength="100" required></div>
+                    <div><label for="task-subject">Disciplina</label><select id="task-subject" name="subject" class="tool-select"><option>História</option><option selected>Matemática</option><option>Português</option><option>Biologia</option><option>Ciências</option><option>Educação Física</option><option>Outra</option><option>Inglês</option><option>Espanhol</option></select></div>
+                    <div><label for="task-date">Data</label><input id="task-date" name="date" type="date" required></div>
+                    <div><label for="task-time">Hora</label><input id="task-time" name="time" type="time" required></div>
+                    <button class="add-task-button" type="submit" aria-label="Adicionar tarefa" title="Adicionar tarefa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Adicionar</span></button>
+                </form>
+                <p class="storage-message" id="task-message" role="status" aria-live="polite"></p>
+            </section>
+
+            <section class="tasks-section" aria-labelledby="tasks-heading">
+                <div class="tasks-heading-row"><div><p class="eyebrow">O teu plano</p><h2 id="tasks-heading">Tarefas</h2></div><span id="task-count" class="subject-count"></span></div>
+                <div class="task-filters" role="group" aria-label="Filtrar tarefas">
+                    <button class="task-filter active" type="button" data-filter="pending" aria-pressed="true">Por fazer<span class="task-filter-count" id="count-pending">0</span></button>
+                    <button class="task-filter" type="button" data-filter="today" aria-pressed="false">Para hoje<span class="task-filter-count" id="count-today">0</span></button>
+                    <button class="task-filter" type="button" data-filter="overdue" aria-pressed="false">Atrasadas<span class="task-filter-count" id="count-overdue">0</span></button>
+                    <button class="task-filter" type="button" data-filter="done" aria-pressed="false">Concluídas<span class="task-filter-count" id="count-done">0</span></button>
+                </div>
+                <div class="task-list" id="task-list" aria-live="polite"></div>
+            </section>
+            <footer class="dashboard-footer">Feito com carinho, um passo de cada vez.</footer>
+        </main>
+    </div>
+
+    <script src="theme.js" defer></script>
+    <script type="module" src="todo.js"></script>
+</body>
+</html>

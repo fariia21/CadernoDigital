@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f2e9">
+    <title>O Caderno — painel de estudos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-shell">
+        <aside class="sidebar">
+            <a class="wordmark" href="dashboard.html" aria-label="O Caderno, início">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v18H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H20M9 6h7M9 9h7"/></svg>
+                </span>
+                O Caderno
+            </a>
+
+            <p class="nav-label">O teu espaço</p>
+            <nav class="side-nav" aria-label="Navegação principal">
+                <a class="nav-link active" href="#inicio" aria-current="page">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+                    Início
+                </a>
+                <a class="nav-link" href="folders.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 7h8M8 11h8"/></svg>
+                    Pastas
+                </a>
+                <a class="nav-link" href="todo.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 7h8M8 11h8"/></svg>
+                    To-do-List
+                </a>
+                <a class="nav-link" href="links.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 7h8M8 11h8"/></svg>
+                    Links úteis
+                </a>
+
+            </nav>
+
+            <div class="sidebar-note">
+                <span class="note-mark" aria-hidden="true">✳</span>
+                <p>O teu ritmo também é progresso.</p>
+            </div>
+
+            <button class="logout-button" id="logout-button" type="button" title="Terminar sessão">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/></svg>
+                Terminar sessão
+            </button>
+        </aside>
+
+        <main class="dashboard-content">
+            <header class="topbar">
+                <p id="today-date" class="today-date"></p>
+                <div class="topbar-actions">
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Ativar modo escuro" title="Ativar modo escuro" aria-pressed="false"></button>
+                <div class="user-chip"><span class="user-avatar" aria-hidden="true">A</span><span>Ariana</span></div>
+                </div>
+            </header>
+
+            <section class="dashboard-hero" id="inicio" aria-labelledby="welcome-title">
+                <p class="eyebrow">O teu espaço de estudo</p>
+                <h1 id="welcome-title">Olá, Ariana<span>.</span><br>Vamos aprender?</h1>
+                <p class="hero-copy">Um tema de cada vez, ao teu ritmo. Por onde queres começar?</p>
+            </section>
+
+            <section class="subjects-section" id="disciplinas" aria-labelledby="subjects-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Organiza as tuas matérias</p>
+                        <h2 id="subjects-title">As tuas disciplinas</h2>
+                    </div>
+                    <span class="subject-count">09 disciplinas</span>
+                </div>
+
+                <div class="subject-grid">
+                    <details class="subject-card history-card">
+                        <summary>
+                            <span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/><path d="M8 2v2m8-2v2"/></svg></span>
+                            <span class="subject-heading"><strong>História</strong><small>Pessoas, lugares e tempos</small></span>
+                            <svg class="subject-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="topic-list"><p>Temas para estudar</p><ul><li>História de Portugal</li><li>Grandes civilizações</li><li>Linha do tempo</li></ul></div>
+                    </details>
+
+                    <details class="subject-card math-card">
+                        <summary>
+                            <span class="subject-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14M5 20h14M9 4l6 16"/></svg>
+                            </span>
+                            <span class="subject-heading"><strong>Matemática</strong><small>Raciocínio e descoberta</small></span>
+                            <svg class="subject-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="topic-list">
+                            <p>Temas para estudar</p>
+                            <ul><li>Frações e proporções</li><li>Equações</li><li>Geometria</li></ul>
+                        </div>
+                    </details>
+
+                    <details class="subject-card language-card">
+                        <summary>
+                            <span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20M8 7h8M8 10h6"/></svg></span>
+                            <span class="subject-heading"><strong>Português</strong><small>Palavras e ideias</small></span>
+                            <svg class="subject-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="topic-list"><p>Temas para estudar</p><ul><li>Gramática</li><li>Interpretação de texto</li><li>Escrita</li></ul></div>
+                    </details>
+
+                    <details class="subject-card biology-card">
+                        <summary>
+                            <span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5.2 8.3A2.5 2.5 0 0 0 6.9 21h10.2a2.5 2.5 0 0 0 2.1-3.7L14 9V3"/><path d="M8 15h8"/></svg></span>
+                            <span class="subject-heading"><strong>Biologia</strong><small>Vida e mundo natural</small></span>
+                            <svg class="subject-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="topic-list"><p>Temas para estudar</p><ul><li>A célula</li><li>Corpo humano</li><li>Ecossistemas</li></ul></div>
+                    </details>
+
+                    <details class="subject-card science-card">
+                        <summary>
+                            <span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5.2 8.3A2.5 2.5 0 0 0 6.9 21h10.2a2.5 2.5 0 0 0 2.1-3.7L14 9V3"/><path d="M8 15h8"/></svg></span>
+                            <span class="subject-heading"><strong>Ciências</strong><small>Experiências e descobertas</small></span>
+                            <svg class="subject-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="topic-list"><p>Temas para estudar</p><ul><li>Matéria e energia</li><li>Experiências</li><li>Ambiente</li></ul></div>
+                    </details>
+
+                    <details class="subject-card sports-card">
+                        <summary>
+                            <span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="m10 9-3 4 3 2-1 6m5-12 3 3 3 1M10 9l4 1 2 4-4 2-3-2"/></svg></span>
+                            <span class="subject-heading"><strong>Educação Física</strong><small>Movimento e bem-estar</small></span>
+                            <svg class="subject-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="topic-list"><p>Temas para estudar</p><ul><li>Condição física</li><li>Desportos e regras</li><li>Saúde e movimento</li></ul></div>
+                    </details>
+
+                    <details class="subject-card other-card">
+                        <summary>
+                            <span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 9h18M12 12v5m-2.5-2.5h5"/></svg></span>
+                            <span class="subject-heading"><strong>Outra</strong><small>Mais uma matéria tua</small></span>
+                            <svg class="subject-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="topic-list"><p>Temas para estudar</p><ul><li>Apontamentos pessoais</li><li>Exercícios</li><li>Revisão</li></ul></div>
+                    </details>
+
+                    <details class="subject-card english-card">
+                        <summary>
+                            <span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20M8 7h8M8 10h6"/></svg></span>
+                            <span class="subject-heading"><strong>Inglês</strong><small>Vocabulário e comunicação</small></span>
+                            <svg class="subject-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="topic-list"><p>Temas para estudar</p><ul><li>Vocabulário</li><li>Gramática</li><li>Leitura e compreensão</li></ul></div>
+                    </details>
+
+                    <details class="subject-card spanish-card">
+                        <summary>
+                            <span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20M8 7h8M8 10h6"/></svg></span>
+                            <span class="subject-heading"><strong>Espanhol</strong><small>Vocabulário e conversação</small></span>
+                            <svg class="subject-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="topic-list"><p>Temas para estudar</p><ul><li>Vocabulário</li><li>Verbos</li><li>Compreensão oral</li></ul></div>
+                    </details>
+                </div>
+            </section>
+
+            <footer class="dashboard-footer">Feito com carinho, um passo de cada vez.</footer>
+        </main>
+    </div>
+
+    <script src="theme.js" defer></script>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

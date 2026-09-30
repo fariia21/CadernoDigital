@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f2e9">
+    <title>O Caderno — Pastas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="study-tools.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-shell">
+        <aside class="sidebar">
+            <a class="wordmark" href="dashboard.html" aria-label="O Caderno, início"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v18H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H20M9 6h7M9 9h7"/></svg></span>O Caderno</a>
+            <p class="nav-label">O teu espaço</p>
+            <nav class="side-nav" aria-label="Navegação principal">
+                <a class="nav-link" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>Início</a>
+                <a class="nav-link active" href="folders.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 9h18"/></svg>Pastas</a>
+                <a class="nav-link" href="todo.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3 6 1 1 2-2M3 12l1 1 2-2M3 18l1 1 2-2"/></svg>To-do-List</a>
+                <a class="nav-link" href="links.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1 0l3-3A5 5 0 0 0 13 2.9l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.1 0l-3 3A5 5 0 0 0 11 21.1l1.7-1.7"/></svg>Links úteis</a>
+            </nav>
+            <div class="sidebar-note"><span class="note-mark" aria-hidden="true">✳</span><p>O teu ritmo também é progresso.</p></div>
+            <button class="logout-button" id="logout-button" type="button" title="Terminar sessão"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/></svg>Terminar sessão</button>
+        </aside>
+
+        <main class="dashboard-content tool-content">
+            <header class="topbar"><p id="today-date" class="today-date"></p><div class="topbar-actions"><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Ativar modo escuro" title="Ativar modo escuro" aria-pressed="false"></button><div class="user-chip"><span class="user-avatar" aria-hidden="true">A</span><span>Ariana</span></div></div></header>
+            <section class="tool-heading" aria-labelledby="page-title"><p class="eyebrow">O teu arquivo de estudo</p><h1 id="page-title">Resumos e apontamentos<span>.</span></h1><p class="hero-copy">Guarda os teus documentos Word e fotografias num só lugar.</p></section>
+
+            <section class="folders-workspace" aria-labelledby="folders-title">
+                <div class="folder-manager-heading"><div><p class="eyebrow">Organiza como preferires</p><h2 id="folders-title">As tuas pastas</h2></div><button id="delete-folder" class="delete-folder-button" type="button" title="Apagar pasta selecionada" aria-label="Apagar pasta selecionada" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6m4-6v6M5 7l1 14h12l1-14M9 7V4h6v3"/></svg>Apagar pasta</button></div>
+                <form id="folder-form" class="folder-create-form"><label class="visually-hidden" for="folder-name">Nome da nova pasta</label><input id="folder-name" name="name" type="text" maxlength="60" placeholder="Nome da pasta, por exemplo: Biologia" required><button class="add-task-button" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Criar pasta</span></button></form>
+                <p class="storage-message" id="folder-message" role="status" aria-live="polite"></p>
+                <p id="folder-empty-state" class="folder-empty-state" hidden>Cria uma pasta para começares a guardar e organizar ficheiros e resumos.</p>
+                <div id="folder-list" class="folder-list" aria-live="polite"></div>
+            </section>
+
+            <section class="materials-section" aria-label="Organização de ficheiros" hidden>
+                <div class="material-controls">
+                    <div class="tab-list" role="tablist" aria-label="Tipo de resumo">
+                        <button class="material-tab active" id="tab-documents" type="button" role="tab" aria-selected="true" aria-controls="upload-panel" data-kind="documents">Documentos Word</button>
+                        <button class="material-tab" id="tab-photos" type="button" role="tab" aria-selected="false" aria-controls="upload-panel" data-kind="photos">Fotos</button>
+                        <button class="material-tab" id="tab-summaries" type="button" role="tab" aria-selected="false" aria-controls="summary-panel" data-kind="summaries">Resumos escritos à mão</button>
+                    </div>
+                </div>
+
+                <div class="material-tabpanel" id="upload-panel" role="tabpanel" aria-labelledby="tab-documents">
+                <div class="upload-panel">
+                    <div class="upload-copy"><span class="upload-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m-5 5 5-5 5 5"/><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg></span><div><h2 id="upload-title">Adiciona um resumo Word</h2><p id="upload-description">Escolhe ficheiros .doc ou .docx para guardar na pasta de uma disciplina.</p></div></div>
+                    <div class="upload-actions"><span id="upload-destination" class="upload-destination">Seleciona uma pasta</span><input id="file-input" class="visually-hidden" type="file" multiple accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"><button class="upload-button" id="choose-files" type="button" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4m-5 5 5-5 5 5"/><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg><span>Adicionar ficheiros</span></button></div>
+                </div>
+                <p class="storage-message" id="storage-message" role="status" aria-live="polite"></p>
+
+                <div class="file-section-heading"><div><h2 id="files-title">Os teus documentos</h2><p id="file-count">A carregar...</p></div><span class="local-storage-note">Guardados na tua conta</span></div>
+                <div class="file-list" id="file-list" aria-live="polite"></div>
+                </div>
+            </section>
+
+            <section class="summary-workspace" id="summary-panel" role="tabpanel" aria-labelledby="tab-summaries" hidden>
+                <div class="summary-workspace-heading">
+                    <div><p class="eyebrow">Apontamentos teus</p><h2 id="summary-section-title">Criar um resumo</h2></div>
+                    <span id="summary-destination" class="upload-destination"></span>
+                </div>
+                <form id="summary-form" class="summary-form">
+                    <input id="summary-id" name="id" type="hidden">
+                    <div class="summary-title-field"><label for="summary-title">Título</label><input id="summary-title" name="title" type="text" placeholder="Ex.: Sistema respiratório" maxlength="100" required></div>
+                    <div class="summary-content-field"><label for="summary-content">Conteúdo</label><textarea id="summary-content" name="content" rows="8" placeholder="Escreve o resumo ou cola aqui os teus apontamentos do Word." required></textarea></div>
+                    <div class="summary-form-actions"><button class="add-task-button" id="summary-save" type="submit"><span>Guardar resumo</span></button><button class="summary-cancel" id="summary-cancel" type="button" hidden>Cancelar edição</button></div>
+                    <p class="storage-message" id="summary-message" role="status" aria-live="polite"></p>
+                </form>
+
+                <div class="summary-library">
+                    <div class="summary-library-heading"><div><p class="eyebrow">A tua biblioteca</p><h2>Resumos desta pasta</h2></div></div>
+                    <div id="summary-list" class="summary-list" aria-live="polite"></div>
+                </div>
+            </section>
+            <footer class="dashboard-footer">Feito com carinho, um passo de cada vez.</footer>
+        </main>
+    </div>
+
+    <script src="theme.js" defer></script>
+    <script type="module" src="folders.js"></script>
+</body>
+</html>

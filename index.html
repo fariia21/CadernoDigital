@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f2e9">
+    <title>O Caderno — espaço de estudo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="login-panel" aria-labelledby="page-title">
+            <div class="login-brand-row">
+            <a class="wordmark" href="#" aria-label="O Caderno, início">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v18H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H20M9 6h7M9 9h7"/></svg>
+                </span>
+                O Caderno
+            </a>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Ativar modo escuro" title="Ativar modo escuro" aria-pressed="false"></button>
+            </div>
+
+            <div class="form-wrap">
+                <p class="eyebrow">O teu espaço de estudo</p>
+                <h1 id="page-title">Bom ter-te<br>por aqui.</h1>
+                <p class="intro">Entra para continuares de onde ficaste. O teu próximo passo começa aqui.</p>
+
+                <form id="login-form" novalidate>
+                    <div class="field">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" autocomplete="username" placeholder="email@exemplo.com" required>
+                    </div>
+                    <div class="field">
+                        <label for="password">Palavra-passe</label>
+                        <div class="input-wrap">
+                            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="A tua palavra-passe" required>
+                            <button class="reveal-password" id="toggle-password" type="button" aria-label="Mostrar palavra-passe" aria-pressed="false" title="Mostrar palavra-passe">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="submit-button" type="submit">
+                        Entrar
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </button>
+                    <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <footer class="panel-footer"><span>Um passo de cada vez.</span><span>Feito com carinho.</span></footer>
+        </section>
+
+        <aside class="visual-panel" aria-label="Uma mesa preparada para estudar">
+            <img class="visual-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=85" alt="Mesa de estudo com computador e caderno junto a uma janela" fetchpriority="high">
+            <div class="image-caption">
+                <span class="caption-label">O teu ritmo, o teu caminho</span>
+                <blockquote>Pequenos passos também te levam longe.</blockquote>
+                <p>Um espaço tranquilo para aprender, crescer e chegar lá.</p>
+            </div>
+        </aside>
+    </main>
+
+    <script src="theme.js" defer></script>
+    <script type="module" src="login.js"></script>
+</body>
+</html>
